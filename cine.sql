@@ -133,3 +133,29 @@ CREATE TABLE Cartelera  (
   FOREIGN KEY (id_Pelicula) REFERENCES Pelicula (id_Pelicula),
   FOREIGN KEY (id_Sala) REFERENCES Sala (id_Sala)
 );
+
+
+/* Login
+Tengo que realizar un consulta, capturar el usuario y contraseña y 
+comparar con los almacenados en la BD, si son iguales ingresaria al sistema; 
+si son diferentes arrojaria un error*/
+select * from usuario as u where u.Email= 'lo que ingreso' and u.Contraseña= 'lo capturado';
+
+/* Recuperar contraseña
+Se modificaria el valor siempre y cuando corresponda al usuario 
+ */
+UPDATE usuario set Contraseña="nueva contraseña" where Email="lo que capturo";
+
+/*traer todos los datos de usuaro, incluido los datos foraneos
+*/
+select * from usuario as u inner join domicilio as d using (id_Dom);
+
+/*Regsitro
+
+*/
+
+
+/*Paneles
+*/
+
+insert into sala values () 

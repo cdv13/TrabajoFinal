@@ -37,7 +37,6 @@ public class conexion {
 			}catch(Exception e) {
 				e.addSuppressed(e);
 			}
-			System.out.println("conexion exitosa");
 	}
 
 
