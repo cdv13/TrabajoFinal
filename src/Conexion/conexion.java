@@ -7,6 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import cinemar.cartelera;
+import cinemar.usuario;
+
+/*
+ * Esta clase me permite establecer la coneccion con la BD
+ */
 public class conexion {
 	 final String JDBC_DRIVER;
 	 final String DB_URL ;
@@ -26,8 +32,7 @@ public class conexion {
 		 PASS= f.getPASS();
 				 
 		  conn=null;
-		  stmt =null;
-			
+					
 			try {
 				Class.forName(JDBC_DRIVER);
 							
@@ -41,7 +46,7 @@ public class conexion {
 
 
 	public ResultSet devolverConsulta(String query) throws SQLException {
-		//System.out.println("creando declaracion");
+		
 		stmt= conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 		String sql;
 		sql=query;
@@ -54,7 +59,7 @@ public class conexion {
 		stmt.executeUpdate(sql);
 	}
 	
-	public void AgregarElementos(String tabla, ArrayList<String> elementos) throws SQLException {
+	public void AgregarElementos(String tabla, ArrayList<usuario> elementos) throws SQLException {
 		
 		System.out.println("Creando Statement");
 		

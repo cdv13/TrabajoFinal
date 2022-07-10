@@ -9,18 +9,18 @@ public class usuario {
 	private Integer dni;
 	private Integer telefono;
 	private String email;
-	private domicilio domicilio;
+	private domicilio id_dom;
 	private String sexo;
 	private Date fecha_nacimiento;
-	private Rol rol;
+	private Rol id_rol;
 	private String usuario;
 	private String contraseña;
 	
 	public usuario () {
 	}
 
-	public usuario(Integer id_us, String nombre, String apellido, Integer dni, Integer telefono, String email,
-			cinemar.domicilio domicilio, String sexo, Date fecha_nacimiento, Rol rol, String usuario,
+	public usuario (Integer id_us,String nombre, String apellido, Integer dni, Integer telefono, String email,
+			domicilio id_dom, String sexo, Date fecha_nacimiento, Rol id_rol, String usuario,
 			String contraseña) {
 		
 		this.id_us = id_us;
@@ -29,12 +29,46 @@ public class usuario {
 		this.dni = dni;
 		this.telefono = telefono;
 		this.email = email;
-		this.domicilio = domicilio;
+		this.id_dom = id_dom;
 		this.sexo = sexo;
 		this.fecha_nacimiento = fecha_nacimiento;
-		this.rol = rol;
+		this.id_rol = id_rol;
 		this.usuario = usuario;
 		this.contraseña = contraseña;
+	}
+
+	public usuario (String nombre, String apellido, Integer dni, Integer telefono, String email,
+			domicilio id_dom, String sexo, Date fecha_nacimiento, Integer id_rol, String usuario,
+			String contraseña) {
+	}
+
+	public usuario(String string, String string2, int i, int j, String string3, domicilio d, String string4, int k,
+			int l, String string5, String string6) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "usuario [id_us=" + id_us + ", nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni
+				+ ", telefono=" + telefono + ", email=" + email + ", id_dom=" + id_dom + ", sexo=" + sexo
+				+ ", fecha_nacimiento=" + fecha_nacimiento + ", id_rol=" + id_rol + ", usuario=" + usuario
+				+ ", contraseña=" + contraseña + "]";
+	}
+
+	public domicilio getId_dom() {
+		return id_dom;
+	}
+
+	public void setId_dom(domicilio id_dom) {
+		this.id_dom = id_dom;
+	}
+
+	public Rol getId_rol() {
+		return id_rol;
+	}
+
+	public void setId_rol(Rol id_rol) {
+		this.id_rol = id_rol;
 	}
 
 	public Integer getId_us() {
@@ -85,14 +119,6 @@ public class usuario {
 		this.email = email;
 	}
 
-	public domicilio getDomicilio() {
-		return domicilio;
-	}
-
-	public void setDomicilio(domicilio domicilio) {
-		this.domicilio = domicilio;
-	}
-
 	public String getSexo() {
 		return sexo;
 	}
@@ -107,14 +133,6 @@ public class usuario {
 
 	public void setFecha_nacimiento(Date fecha_nacimiento) {
 		this.fecha_nacimiento = fecha_nacimiento;
-	}
-
-	public Rol getRol() {
-		return rol;
-	}
-
-	public void setRol(Rol rol) {
-		this.rol = rol;
 	}
 
 	public String getUsuario() {

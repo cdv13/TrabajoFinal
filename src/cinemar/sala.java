@@ -17,6 +17,16 @@ public class sala {
 		this.capacidad = capacidad;
 		this.tiposala = tiposala;
 	}
+	
+
+	
+	
+
+	@Override
+	public String toString() {
+		return "sala [id_sala=" + id_sala + ", numero=" + numero + ", capacidad=" + capacidad + ", tiposala=" + tiposala
+				+ "]";
+	}
 
 	public Integer getId_sala() {
 		return id_sala;

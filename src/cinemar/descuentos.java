@@ -14,6 +14,11 @@ public class descuentos {
 		this.tipo = tipo;
 	}
 
+	@Override
+	public String toString() {
+		return "descuentos [id_desc=" + id_desc + ", tipo=" + tipo + "]";
+	}
+
 	public Integer getId_desc() {
 		return id_desc;
 	}

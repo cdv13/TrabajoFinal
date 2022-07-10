@@ -8,6 +8,11 @@ public class Tiposala {
 	public Tiposala () {
 	}
 
+	@Override
+	public String toString() {
+		return "Tiposala [id_tiposala=" + id_tiposala + ", tipo=" + tipo + "]";
+	}
+
 	public Tiposala(Integer id_tiposala, String tipo) {
 		
 		this.id_tiposala = id_tiposala;

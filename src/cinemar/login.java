@@ -4,7 +4,9 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.Scanner;
 import Conexion.conexion;
-
+/*
+ * Con esta clase podemos acceder a la pagina y su menu inicial.
+ */
 
 
 public class login {
@@ -28,30 +30,18 @@ public class login {
 
 		if (rs.next()) {
 			System.out.println("BIENVENIDO");
+			if(rs.getInt("id_Rol")==1) {
+				System.out.println("Menu Cliente");
+				panelUsuario pu=new panelUsuario();
+			}else {
+				System.out.println("Menu Administrador");
+				panelAdmin pa= new panelAdmin();
+			}
 		} else {
 			System.out.println("Usuario o Contraseña incorrectos");
+			//poner metodo recuperar contraseña
 		}
 			
-		
-		
-		/*
-		 //Statement stmt =null;
-		//Connection conn=null;
-		try {
-			stmt=conn.createStatement();
-			String sql;
-			sql="select * from usuario as u where u.usuario= "+ "'" + usuario +"'"+ "and u.Contraseña= " + "'"+ contraseña + "'"+ ";";
-			stmt.executeUpdate(sql);
-			stmt.close();
-			
-		}catch (SQLException se) {
-			se.printStackTrace();
-		}catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			System.out.println("BIENVENIDO");
-			}
-			*/			
-				
+	
 	}
 }

@@ -12,6 +12,11 @@ public class Rol {
 		this.tipo = tipo;
 	}
 
+	@Override
+	public String toString() {
+		return "Rol [id_rol=" + id_rol + ", tipo=" + tipo + "]";
+	}
+
 	public Integer getId_rol() {
 		return id_rol;
 	}

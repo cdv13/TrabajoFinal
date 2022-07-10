@@ -155,7 +155,38 @@ select * from usuario as u inner join domicilio as d using (id_Dom);
 */
 
 
-/*Paneles
+/*Paneles de Usuario y Administrador
+Consultas a realizar
 */
 
-insert into sala values () 
+select * from sala;
+insert into cartelera values ();
+UPDATE cartelera set id_Pelicula="nueva", id_Sala="nueva", Horario= "nuevo" where id_Cartelera="actual";
+
+
+select id_Sala, Numero, Capacidad, Tipo from Sala 
+inner join tipo_sala using(id_Tiposala);
+
+insert into cartelera values (null,"+idP+","+"'"+Horario+"'"+","+idSala+");
+
+select * from reserva as r 
+inner join pelicula.Nombre as p using (id_Pelicula) 
+inner join usuario.Nombre as u using (id_Usuario) 
+inner join sala.numero as s using (id_Sala) 
+inner join  butaca.numero as b using (id_Butaca) 
+inner join estado.estado as e using (id_Estado);
+
+SELECT  * FROM reserva AS rs
+INNER JOIN pelicula AS p ON rs.id_Pelicula = p.id_Pelicula
+INNER JOIN usuario AS u ON rs.id_Usuario = u.id_Usuario
+INNER JOIN sala AS s ON rs.id_Sala = s.id_Sala
+INNER JOIN butaca AS b ON rs.id_Butaca = b.id_Butaca
+INNER JOIN estado AS e ON rs.id_Estado = e.id_Estado;
+
+UPDATE Cinemar.butaca SET id_Estado= "reservado" WHERE (id_Butaca = id_Butaca);
+
+select id_Sala,Numero,Capacidad,Tipo from sala inner join Tipo_sala using(id_Tiposala);
+
+select id_Cartelera, Horario, Nombre, Numero from cartelera 
+inner join pelicula using(id_Pelicula)
+inner join Sala using(id_Sala);

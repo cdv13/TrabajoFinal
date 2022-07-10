@@ -25,6 +25,10 @@ public class domicilio {
 		this.provincia = provincia;
 	}
 
+	public domicilio(String string, int i, Object object, Object object2, String string2, String string3) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Integer getId_Dom() {
 		return id_Dom;
 	}

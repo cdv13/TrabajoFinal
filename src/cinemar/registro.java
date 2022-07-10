@@ -1,47 +1,82 @@
 package cinemar;
 
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.Connection;
 import java.sql.ResultSet;
-import java.util.Scanner;
+import java.sql.SQLException;
 
 import Conexion.conexion;
 
-public class registro {
+/*
+ * Esta clase me permite ingresar nuevos usuarios
+ */
 
-	private usuario usuario;
-	private conexion conn;
-	
+public class registro  {
+	Connection conn;
+	Statement stmt;
+	String sql;	
 	
 	public registro () {
-		
-		this.usuario=usuario;
-		this.conn=new conexion ();
-		
-		Scanner c= new Scanner (System.in);
-		
-		System.out.println("Ingrese los datos");
-		usuario u= new usuario (getId_us, getNombre, getapellido, get dni, gettelefono, 
-				getid_dom, getemail, getfecha_nacimiento, getid_Rol, getusuario, getcontraseña);
-		
-				
-		AgregarElementos(usuario);
-		
-		String sql;
-		sql="insert into "+ tabla + "\r\n"
-			+"values \r\n";
-		for( int i=0;i<elementos.size()-1;i++) {
+		conexion conn=new conexion();
+	}
+	
+	public void crearDomicilio (domicilio domicilio){
+					
+		try {
+			stmt=conn.createStatement();
+			sql= "INSERT INTO cinemar.domicilio"
+					+ "(id_Dom, Calle, Altura, piso, numero, Departamento, Provincia) "
+					+ "	VALUES ('','" 
+					+ domicilio.getCalle()+ "','"
+					+ domicilio.getAltura() + "','"
+					+ domicilio.getPiso() + "','"
+					+ domicilio.getNumero() + "','"
+					+ domicilio.getDeparamento() + "','"
+					+ domicilio.getProvincia()+ "');'";	
 			
-			sql.concat("("+"'"+elementos.get(i)+"'"+", \r\n");
+			stmt.executeUpdate(sql);
+			System.out.println("domicilio registrado");	
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Error al registrar");
 		}
-		sql.concat("'"+elementos.get(elementos.size())+"'"+")\r\n");
-		sql.concat(";");
-		stmt.executeUpdate(sql);
+					
 		
-		System.out.print("valores agregados");
+		
+	}
+	
+	public void crearUsuario(usuario usuario)  {
+		try {
+			stmt=conn.createStatement();		
+			sql= "INSERT INTO cinemar.usuario"
+					+ "(Nombre, Apellido, DNI, Telefono, Email, id_Dom, Sexo, Fecha_Nacimiento, id_Rol, Usuario, Contraseña)"
+					+ "	VALUES ('"
+					+ usuario.getNombre() + "','"
+					+ usuario.getApellido()  + "','"
+					+ usuario.getDni()  + ","
+					+ usuario.getTelefono() + "','"
+					+ usuario.getEmail()  + "','"
+					+ usuario.getId_dom().getId_Dom()  + "','"
+					+ usuario.getSexo()  + "','"
+					+ usuario.getFecha_nacimiento()  + "','"
+					+ usuario.getId_rol().getId_rol() + "','"
+					+ usuario.getUsuario() + "','"
+					+ usuario.getContraseña() + "');";
+			
+			stmt.executeUpdate(sql);
+			System.out.println("Usuario registrado");	
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Error al registrar");
+		}
+					
 
 	}
 
-
-	
-	
-	
 }
+
+		

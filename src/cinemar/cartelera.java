@@ -19,6 +19,11 @@ public cartelera(Integer id_cart, cinemar.pelicula pelicula, cinemar.sala sala, 
 	this.horario = horario;
 }
 
+@Override
+public String toString() {
+	return "cartelera [id_cart=" + id_cart + ", pelicula=" + pelicula + ", sala=" + sala + ", horario=" + horario + "]";
+}
+
 public Integer getId_cart() {
 	return id_cart;
 }

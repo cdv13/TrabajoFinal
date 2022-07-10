@@ -14,7 +14,7 @@ public class pelicula {
 	}
 
 	public pelicula(Integer id, String nombre, String director, Integer duracion, String genero, String idioma,
-			cinemar.sala sala) {
+			sala sala) {
 		
 		this.id = id;
 		this.nombre = nombre;
@@ -23,6 +23,12 @@ public class pelicula {
 		this.genero = genero;
 		this.idioma = idioma;
 		this.sala = sala;
+	}
+
+	@Override
+	public String toString() {
+		return "pelicula [id=" + id + ", nombre=" + nombre + ", director=" + director + ", duracion=" + duracion
+				+ ", genero=" + genero + ", idioma=" + idioma + ", sala=" + sala + "]";
 	}
 
 	public Integer getId() {

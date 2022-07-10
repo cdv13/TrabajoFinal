@@ -29,6 +29,12 @@ public class reserva {
 		this.estado = estado;
 	}
 
+	@Override
+	public String toString() {
+		return "reserva [id_res=" + id_res + ", fecha=" + fecha + ", precio=" + precio + ", pelicula=" + pelicula
+				+ ", usuario=" + usuario + ", sala=" + sala + ", butaca=" + butaca + ", estado=" + estado + "]";
+	}
+
 	public Integer getId_res() {
 		return id_res;
 	}
