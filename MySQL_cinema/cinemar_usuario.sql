@@ -40,7 +40,7 @@ CREATE TABLE `usuario` (
   KEY `usuario_ibfk_1` (`id_Dom`),
   CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id_Dom`) REFERENCES `domicilio` (`id_Dom`),
   CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`id_Rol`) REFERENCES `rol` (`id_Rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +49,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Clara','Del Valle',123456,387234567,1,'ccdv@correo.com','Femenino','1986-07-13',1,'ccdv','12345678');
+INSERT INTO `usuario` VALUES (1,'Clara','Del Valle',123456,387234567,1,'ccdv@correo.com','Femenino','1986-07-13',1,'ccdv','12345678'),(2,'Martin','Gonzalez',457290,387240967,1,'mgon@correo.com','Masculino','1980-02-15',2,'mg13','13572468');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-08 21:11:03
+-- Dump completed on 2022-07-10 19:10:23
